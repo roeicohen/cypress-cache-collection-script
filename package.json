@@ -1,28 +1,28 @@
 {
-  "name": "cypress-update-monitor",
+  "name": "cypress-cache-collection-script",
   "version": "1.0.0",
-  "description": "A server that checks if Cypress has a new update every day",
+  "description": "A script that downloads all of Cypress' cache files for Windows and Linux.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roeicohen/cypress-update-monitor.git"
+    "url": "git+https://github.com/roeicohen/cypress-cache-collection-script.git"
   },
   "author": "Roei Cohen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/roeicohen/cypress-update-monitor/issues"
+    "url": "https://github.com/roeicohen/cypress-cache-collection-script/issues"
   },
-  "homepage": "https://github.com/roeicohen/cypress-update-monitor#readme",
+  "homepage": "https://github.com/roeicohen/cypress-cache-collection-script#readme",
   "dependencies": {
     "axios": "^0.25.0",
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",
     "nodejs-file-downloader": "^4.9.3",
     "octokit": "^3.1.2",
+    "path": "^0.12.7",
     "ramda": "^0.29.1",
     "winston": "^3.5.1"
   }
