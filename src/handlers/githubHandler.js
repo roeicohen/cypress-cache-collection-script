@@ -1,9 +1,14 @@
+const { createTokenAuth } = require('@octokit/auth-token');
+const { GITHUB_PERSONAL_ACCESS_TOKEN } = require('../config');
 const logger = require('../utils/logger');
 const { Octokit } = require('octokit');
 
 const getCypressReleases = async () => {
     try {
-        const octokit = new Octokit({});
+        const octokit = new Octokit({
+            authStrategy: GITHUB_PERSONAL_ACCESS_TOKEN ? () => createTokenAuth(GITHUB_PERSONAL_ACCESS_TOKEN) : undefined,
+            auth: GITHUB_PERSONAL_ACCESS_TOKEN
+        });
         const cypressReleases = [];
 
         const iterator = octokit.paginate.iterator(octokit.rest.repos.listReleases, {

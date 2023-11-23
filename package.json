@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/roeicohen/cypress-cache-collection-script#readme",
   "dependencies": {
+    "@octokit/auth-token": "^4.0.0",
     "axios": "^0.25.0",
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",

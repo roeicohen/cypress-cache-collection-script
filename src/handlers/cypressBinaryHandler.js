@@ -10,9 +10,12 @@ const CYPRESS_BINARY_DOWNLOAD_URL = "https://download.cypress.io/desktop"
  */
 const downloadCypressBinaryZip = async (fileIdentifier) => {
     const [version, platform, arch] = fileIdentifier.split('-')
+    const queryParams = new URLSearchParams()
+    queryParams.append('platform', platform)
+    arch && queryParams.append('arch', arch)
 
     const downloader = new Downloader({
-        url: `${CYPRESS_BINARY_DOWNLOAD_URL}/${version}?platform=${platform}${arch && `&arch=${arch}`}`,
+        url: `${CYPRESS_BINARY_DOWNLOAD_URL}/${version}?${queryParams}`,
         directory: `${process.cwd()}/downloads/${fileIdentifier}`,
         fileName: 'Cypress.zip'
     })
